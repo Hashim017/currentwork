@@ -22,6 +22,12 @@ const dataFont = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "Currentwork — work that keeps moving",
   description:

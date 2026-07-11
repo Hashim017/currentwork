@@ -68,6 +68,20 @@
     border-radius: 4px;
   }
 
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    input,
+    textarea,
+    select {
+      font-size: 0.875rem; /* restore normal 14px on desktop, where zoom isn't an issue */
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
