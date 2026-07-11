@@ -33,8 +33,8 @@ A full-stack task manager built with Next.js, TypeScript, Prisma, and PostgreSQL
 ### 1. Clone and install
 
 \`\`\`bash
-git clone https://github.com/your-username/currentwork.git
-cd currentwork
+git clone https://github.com/Hashim017/currentwork.git
+cd CurrentWork
 npm install
 \`\`\`
 
