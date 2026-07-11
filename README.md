@@ -4,7 +4,7 @@ A full-stack task manager built with Next.js, TypeScript, Prisma, and PostgreSQL
 
 ## Live Demo
 
-[https://currentwork.vercel.app](#) <!-- replace with your actual Vercel URL -->
+[https://current-work-red.vercel.app](#) <!-- replace with your actual Vercel URL -->
 
 ## Tech Stack
 
