@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
 

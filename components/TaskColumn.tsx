@@ -15,12 +15,14 @@ export function TaskColumn({
   status,
   tasks,
   onToggleStatus,
+  onChangeStatus,
   onEdit,
   onDelete,
 }: {
   status: Status;
   tasks: Task[];
   onToggleStatus: (task: Task) => void;
+  onChangeStatus: (task: Task, status: Status) => void;
   onEdit: (task: Task) => void;
   onDelete: (task: Task) => void;
 }) {
@@ -46,6 +48,7 @@ export function TaskColumn({
               key={task.id}
               task={task}
               onToggleStatus={onToggleStatus}
+              onChangeStatus={onChangeStatus}
               onEdit={onEdit}
               onDelete={onDelete}
             />

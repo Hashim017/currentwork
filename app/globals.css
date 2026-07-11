@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 420px;
+
   --color-mist-50: #FAFAFD;
   --color-mist-100: #F4F3FB;
   --color-mist-200: #E7E5F5;
@@ -36,6 +38,9 @@
 
 @layer base {
   * {
+    button:not(:disabled) {
+    cursor: pointer;
+  }
     border-color: var(--color-mist-200);
   }
 

@@ -8,7 +8,6 @@ import { TaskColumn } from "@/components/TaskColumn";
 import { TaskModal, type TaskFormValues } from "@/components/TaskModal";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { EmptyState } from "@/components/EmptyState";
-import { GithubPanel } from "@/components/GithubPanel";
 import { BoardSkeleton } from "@/components/Skeletons";
 import {
   useCreateTask,
@@ -62,7 +61,7 @@ export default function Home() {
     if (editingTask) {
       updateTask.mutate(
         { id: editingTask.id, input: payload },
-        { onSuccess: () => setModalOpen(false) }
+        { onSuccess: () => setModalOpen(false) },
       );
     } else {
       createTask.mutate(payload, { onSuccess: () => setModalOpen(false) });
@@ -74,6 +73,10 @@ export default function Home() {
       id: task.id,
       input: { status: NEXT_STATUS[task.status] },
     });
+  }
+
+  function handleChangeStatus(task: Task, status: Status) {
+    updateTask.mutate({ id: task.id, input: { status } });
   }
 
   return (
@@ -119,10 +122,6 @@ export default function Home() {
               <FlowBar tasks={tasks} />
             </div>
 
-            <div className="mb-8">
-              <GithubPanel username="Hashim017" />
-            </div>
-
             <div className="flex flex-col sm:flex-row gap-6">
               {COLUMNS.map((status) => (
                 <TaskColumn
@@ -130,6 +129,7 @@ export default function Home() {
                   status={status}
                   tasks={grouped[status]}
                   onToggleStatus={handleToggleStatus}
+                  onChangeStatus={handleChangeStatus}
                   onEdit={openEditModal}
                   onDelete={setTaskToDelete}
                 />

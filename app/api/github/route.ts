@@ -12,9 +12,7 @@ interface GithubRepo {
 
 export async function GET(request: NextRequest) {
   const username =
-    request.nextUrl.searchParams.get("username") ||
-    process.env.GITHUB_USERNAME ||
-    "Hashim017";
+    request.nextUrl.searchParams.get("username") || "Hashim017";
 
   try {
     const res = await fetch(
