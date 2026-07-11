@@ -125,11 +125,7 @@ export function TaskCard({
           </div>
         </div>
 
-        <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
-          {/* edit/delete buttons stay the same */}
-        </div>
-
-        <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+        <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 touch-always-visible">
           <button
             onClick={() => onEdit(task)}
             aria-label="Edit task"

@@ -3,44 +3,46 @@
 @theme {
   --breakpoint-xs: 420px;
 
-  --color-mist-50: #FAFAFD;
-  --color-mist-100: #F4F3FB;
-  --color-mist-200: #E7E5F5;
-  --color-mist-300: #D3D0E8;
+  --color-mist-50: #fafafd;
+  --color-mist-100: #f4f3fb;
+  --color-mist-200: #e7e5f5;
+  --color-mist-300: #d3d0e8;
 
-  --color-ink-900: #17162B;
-  --color-ink-700: #2C2A47;
-  --color-ink-500: #55527A;
-  --color-ink-300: #8A87A8;
+  --color-ink-900: #17162b;
+  --color-ink-700: #2c2a47;
+  --color-ink-500: #55527a;
+  --color-ink-300: #8a87a8;
 
-  --color-flow-600: #4C3FE0;
-  --color-flow-500: #5B4FE9;
-  --color-flow-400: #7A70F0;
-  --color-flow-100: #E7E4FC;
+  --color-flow-600: #4c3fe0;
+  --color-flow-500: #5b4fe9;
+  --color-flow-400: #7a70f0;
+  --color-flow-100: #e7e4fc;
 
-  --color-amber-500: #F0A93F;
-  --color-amber-100: #FBE9D0;
+  --color-amber-500: #f0a93f;
+  --color-amber-100: #fbe9d0;
 
   --color-teal-600: #109679;
-  --color-teal-500: #16C79A;
-  --color-teal-100: #D2F3EA;
+  --color-teal-500: #16c79a;
+  --color-teal-100: #d2f3ea;
 
-  --color-coral-500: #E8577A;
-  --color-coral-100: #FBE1E7;
+  --color-coral-500: #e8577a;
+  --color-coral-100: #fbe1e7;
 
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, monospace;
 
-  --shadow-soft: 0 1px 2px rgba(23, 22, 43, 0.04), 0 8px 24px -12px rgba(23, 22, 43, 0.12);
-  --shadow-lift: 0 2px 8px rgba(23, 22, 43, 0.06), 0 20px 40px -20px rgba(76, 63, 224, 0.25);
+  --shadow-soft:
+    0 1px 2px rgba(23, 22, 43, 0.04), 0 8px 24px -12px rgba(23, 22, 43, 0.12);
+  --shadow-lift:
+    0 2px 8px rgba(23, 22, 43, 0.06), 0 20px 40px -20px rgba(76, 63, 224, 0.25);
 }
 
 @layer base {
   * {
     button:not(:disabled) {
-    cursor: pointer;
-  }
+      cursor: pointer;
+    }
     border-color: var(--color-mist-200);
   }
 
@@ -67,7 +69,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -85,12 +89,23 @@
   }
 
   .grain {
-    background-image: radial-gradient(circle at 1px 1px, rgba(23,22,43,0.05) 1px, transparent 0);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(23, 22, 43, 0.05) 1px,
+      transparent 0
+    );
     background-size: 18px 18px;
   }
 
   .scrollbar-thin {
     scrollbar-width: thin;
     scrollbar-color: var(--color-mist-300) transparent;
+  }
+
+  @media (hover: none) {
+    .group:hover .touch-always-visible,
+    .touch-always-visible {
+      opacity: 1 !important;
+    }
   }
 }
