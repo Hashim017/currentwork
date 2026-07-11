@@ -65,20 +65,6 @@ export function TaskCard({
       )}
     >
       <div className="flex items-start gap-3">
-        <button
-          onClick={() => onToggleStatus(task)}
-          aria-label={isDone ? "Mark task as not done" : "Mark task as done"}
-          title={isDone ? "Mark as not done" : "Mark as done"}
-          className={clsx(
-            "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all",
-            isDone
-              ? "bg-[var(--color-teal-500)] border-[var(--color-teal-500)]"
-              : "border-[var(--color-mist-300)] hover:border-[var(--color-flow-500)]",
-          )}
-        >
-          {isDone && <Check size={12} strokeWidth={3} className="text-white" />}
-        </button>
-
         <div className="min-w-0 flex-1">
           <p
             className={clsx(
@@ -121,8 +107,6 @@ export function TaskCard({
             )}
           </div>
 
-          {/* Explicit status dropdown — clearer than cycling the circle */}
-          {/* Segmented status control */}
           <div className="mt-2.5 inline-flex rounded-full bg-[var(--color-mist-100)] p-0.5">
             {STATUS_OPTIONS.map((s) => (
               <button
@@ -139,6 +123,10 @@ export function TaskCard({
               </button>
             ))}
           </div>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+          {/* edit/delete buttons stay the same */}
         </div>
 
         <div className="flex shrink-0 items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
